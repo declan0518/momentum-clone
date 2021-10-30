@@ -8,8 +8,20 @@ const handleSubmit = (event) => {
   event.preventDefault();
   loginForm.classList.add(HIDDEN_CLASSNAME);
   const username = loginInput.value;
-  greeting.innerText = username;
+  localStorage.setItem("username", username);
+  paintGreeting(username);
+};
+
+const paintGreeting = (username) => {
+  greeting.innerText = `Hello ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 };
 
-loginForm.addEventListener("submit", handleSubmit);
+const savedUsername = localStorage.getItem("username");
+
+if (savedUsername === null) {
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", handleSubmit);
+} else {
+  paintGreeting(savedUsername);
+}
