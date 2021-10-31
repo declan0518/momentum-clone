@@ -9,6 +9,7 @@
   </head>
   <body>
     <main class="main">
+      <h1 class="clock">00:00:00</h1>
       <form class="login-form hidden">
         <input
           class="login-form__input"
@@ -18,9 +19,17 @@
         />
         <input class="login-form__submit" type="submit" value="Log In" />
       </form>
-      <h1 class="clock">00:00:00</h1>
       <h1 class="greeting hidden"></h1>
     </main>
+    <form class="todo-form">
+      <input
+        required
+        class="todo-form__input"
+        type="text"
+        placeholder="Write a to do!"
+      />
+    </form>
+    <ul class="todo-list"></ul>
     <div class="quote">
       <span class="quote__text"></span>
       <span class="quote__author"></span>
@@ -29,5 +38,6 @@
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
   </body>
 </html>
